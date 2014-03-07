@@ -1,14 +1,14 @@
-(ns leiningen.less-css-npm.plugin
-  (:require [robert.hooke
-             leiningen.compile]))
+(ns leiningen.plugin.less-css-npm
+  (:require [robert.hooke :refer :all]
+            [leiningen.compile]
+            [leiningen.less-css-npm]))
 
-(defn less-css-npm
-  [project & args]
-  (prn "LESS COMPILE TIME MOFO")
-  (clojure.java.shell/sh "npm.cmd" "lessc" "resources/public/css/less/application.less" "resources/public/css/application.css"))
+(defn wrap-compile
+  [f & args]
+  (prn "HOOK TRIGGERED")
+  (leiningen.less-css-npm/less-css-npm f args))
 
-
-(defn activate []
-  (rober.hooke/add-hook
+(defn install-hooks []
+  (robert.hooke/add-hook
    #'leiningen.compile/compile
-   #'less-css-npm))
+   wrap-compile))
