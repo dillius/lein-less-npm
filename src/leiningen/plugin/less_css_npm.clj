@@ -5,8 +5,7 @@
 
 (defn wrap-compile
   [f & args]
-  (prn "HOOK TRIGGERED")
-  (leiningen.less-css-npm/less-css-npm f args))
+  (leiningen.less-css-npm/less-css-npm (first args) (rest args)))
 
 (defn install-hooks []
   (robert.hooke/add-hook
