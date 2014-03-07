@@ -3,4 +3,6 @@
   :url "https://github.com/dillius/lein-less-npm"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :eval-in-leiningen true)
+  :eval-in-leiningen true
+  :scm {:name "git"
+        :url "https://github.com/dillius/lein-less-npm"})
