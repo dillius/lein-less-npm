@@ -1,4 +1,4 @@
-(defproject lein-less-npm "0.1.0-SNAPSHOT"
+(defproject lein-less-npm "0.1.0"
   :description "Leiningen plugin for compiling LESS files using the NPM install LESS Compiler."
   :url "https://github.com/dillius/lein-less-npm"
   :license {:name "Eclipse Public License"
